@@ -1,0 +1,22 @@
+{
+          "title": "Photo Gallery: College Cup Highlights",
+          "description": "A curated selection of photos from the College Cup event, showcasing unforgettable moments and standout performances.",
+          "images": [
+            {
+              "src": "images/photos/collegecup-0933.jpg",
+              "alt": "Team celebrating their victory at the College Cup.",
+              "caption": "Team celebrates a triumphant win at the College Cup."
+            },
+            {
+              "src": "images/photos/collegecup-0934.jpg",
+              "alt": "Intense gameplay moment during the College Cup.",
+              "caption": "An intense gameplay moment that kept the crowd on edge."
+            },
+            {
+              "src": "images/photos/collegecup-1031.jpg",
+              "alt": "The grand finale crowd cheering for their teams.",
+              "caption": "The grand finale: a roaring crowd cheering for their teams."
+            }
+          ]
+        }
+        

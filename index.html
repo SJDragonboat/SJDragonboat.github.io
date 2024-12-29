@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="author" content = "Johnathon Lu"/>
     <meta name="description" content = "San Jose State University Collegiate Club Sports Dragonboat Team located in Northern California. C"/>
-    <meta name="keywords" content = "dragonboat, CBDA, NorCal, paddling, paddle, sport, athlete, athletics, college, university, team, youtube, video, race, results, san jose, outrigger, canoe, outrigger canoe"/>
+    <meta name="keywords" content = "dragonboat, CBDA, NorCal, paddling, paddle, sport, athlete, athletics, college, university, team, youtube, video, race, results, san jose, outrigger, canoe, outrigger canoe, san jose dragonboat, sjdb, sj dragonboat, sjdragonboat"/>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
@@ -40,6 +40,7 @@
             <li><a href="#Recruitment">Recruitment</a></li>
             <li><a href="#RaceResults">Race Results</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#photo">Photo Gallery</a></li>
             <!-- <li><a href="#elements">Elements</a></li> -->
           </ul>
         </nav>
@@ -121,61 +122,49 @@
         <article id="RaceResults">
           <h2 class="major">Race Results</h2>
           <span class="image main"><img src="images/pic03.png" alt="" /></span>
-
-          <h3 style="text-align: center;">2024-2025</h3>
-          <b>NCIDBF</b>
-          <a href="documents/2024-NCIDBF-Results.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
-          <b>Halloween Howl</b>
-          <a href="documents/2017_college_race_results.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
-          <b>CBDA College Cup</b>
-          <a href="documents/2017_college_race_results.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
-
+          <div id="raceResultsContainer">
+            <!-- Race results will be loaded dynamically here -->
+          </div>
           <h4 style="text-align: center;">Updates more to come!</h4>
-
-          <h3 style="text-align: center;">2023-2024</h3>
-          <b>CBDA College Cup</b>
-          <a href="documents/2023_college_cup_results.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
-          
-          <b>Baby Long Beach</b>
-          <!-- <a href="documents/dummy.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          > -->
-
-          <b>Regatta</b>
-          <a href="documents/2024_regional_regatta_race_results.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
-
-          <b>Long Beach</b>
-          <a href="documents/2024LBDBF_Final.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
-
-          <h3 style="text-align: center;">2022-2023</h3>
-          <b>CBDA College Cup</b>
-          <a href="documents/2017_college_race_results.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
-
-          <b>Regatta</b>
-          <a href="documents/2023 Regatta Results Public Draft.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
-
-          <h3 style="text-align: center;">2017-2018</h3>
-          <b>CBDA College Cup</b>
-          <a href="documents/2017_college_race_results.pdf"
-            ><div style="text-align: center">Race Results</div></a
-          >
         </article>
+        
+        <script>
+          // Load race results from JSON
+          fetch('race_results.json')
+            .then(response => response.json())
+            .then(data => {
+              const container = document.getElementById('raceResultsContainer');
+        
+              data.results.forEach(yearData => {
+                // Create year heading
+                const yearHeading = document.createElement('h3');
+                yearHeading.style.textAlign = 'center';
+                yearHeading.textContent = yearData.year;
+                container.appendChild(yearHeading);
+        
+                // Add races
+                yearData.races.forEach(race => {
+                  const raceElement = document.createElement('div');
+                  raceElement.style.textAlign = 'left';
+        
+                  const raceName = document.createElement('b');
+                  raceName.textContent = race.name;
+        
+                  const raceLink = document.createElement('a');
+                  raceLink.href = race.file;
+                  raceLink.innerHTML = '<div style="text-align: center">Race Results</div>';
+        
+                  raceElement.appendChild(raceName);
+                  raceElement.appendChild(raceLink);
+                  container.appendChild(raceElement);
+                });
+              });
+            })
+            .catch(error => {
+              console.error('Error loading race results:', error);
+            });
+        </script>
+        
 
         <!-- Contact -->
         <article id="contact">
@@ -206,7 +195,10 @@
             </li>
           </ul>
         </article>
-
+        <!-- Photo Gallary -->
+        <article id="photo">
+          <h2 class="major">Photo Gallary</h2>
+        </article>
         <!-- Elements -->
         <article id="elements">
           <h2 class="major">Elements</h2>
