@@ -6,9 +6,7 @@
 -->
 <html>
   <head>
-    <title>
-      San Jose Dragonboat Website
-    </title>
+    <title>San Jose Dragonboat Website</title>
     <meta charset="utf-8" />
     <meta name="author" content="Johnathon Lu" />
     <meta
@@ -46,9 +44,10 @@
           <ul>
             <li><a href="#intro">Intro</a></li>
             <li><a href="#Recruitment">Recruitment</a></li>
+            <li><a href="#strava">Strava Tracking</a></li>
             <li><a href="#RaceResults">Race Results</a></li>
-            <li><a href="#contact">Contact</a></li>
             <li><a href="#photo">Photo Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
             <!-- <li><a href="#elements">Elements</a></li> -->
           </ul>
         </nav>
@@ -225,9 +224,7 @@
           fetch("photo_gallary.json")
             .then((response) => response.json())
             .then((data) => {
-              const container = document.getElementById(
-                "photoGallary"
-              );
+              const container = document.getElementById("photoGallary");
               data.photos.forEach((photo) => {
                 const photoWrapper = document.createElement("div");
                 const photoTitle = document.createElement("h4");
@@ -244,6 +241,12 @@
               });
             });
         </script>
+
+        <!-- Strava Tracking -->
+        <article id="strava">
+          <h2 class="major">Strava Tracking</h2>
+          <h3>In Progress...</h3>
+        </article>
 
         <!-- Elements -->
         <article id="elements">
