@@ -1468,7 +1468,7 @@ body.is-preload #bg:before {
 
 #header nav ul li {
   padding-left: 0;
-  border-left: solid 1px #ffffff;
+  /* border-left: solid 1px #ffffff; */
 }
 
 #header nav ul li:first-child {
@@ -1503,7 +1503,7 @@ body.is-preload #bg:before {
   left: calc(50% - 1px);
   width: 1px;
   height: 100%;
-  background: #ffffff;
+  /* background: #ffffff; */
 }
 
 #header nav.use-middle ul li.is-middle {
